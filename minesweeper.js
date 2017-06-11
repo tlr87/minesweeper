@@ -1,62 +1,125 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
+var Demining = false;
+function isMineRandom() {
+  var x = Math.floor((Math.random() * 10) + 1);
+  console.log(x);
+  if (x % 2 == 0) {
+    return Demining = false;
+    console.log("NoBoom!",Demining)
+  } else {
+    return Demining = true;
+    console.log("Boom!",Demining);
+  }
+}
+
 // Define your `board` object here!
 var board = {
   cells:[
+    //Row0
     {
-      isMine: false,
+      isMine: isMineRandom(),
       hidden: true,
       row: 0,
       col: 0
     },
     {
-      isMine: false,
+      isMine: isMineRandom(),
       hidden: true,
       row: 0,
       col: 1
     },
     {
-      isMine: false,
+      isMine: isMineRandom(),
       hidden: true,
       row: 0,
       col: 2
     },
     {
-      isMine: true,
+      isMine: isMineRandom(),
+      hidden: true,
+      row: 0,
+      col: 3
+    },
+    //Row1
+    {
+      isMine: isMineRandom(),
       hidden: true,
       row: 1,
       col: 0
     },
     {
-      isMine: false,
+      isMine: isMineRandom(),
       hidden: true,
       row: 1,
       col: 1
     },
     {
-      isMine: false,
+      isMine: isMineRandom(),
       hidden: true,
       row: 1,
       col: 2
     },
     {
-      isMine: false,
+      isMine: isMineRandom(),
+      hidden: true,
+      row: 1,
+      col: 3
+    },
+    //Row2
+    {
+      isMine: isMineRandom(),
       hidden: true,
       row: 2,
       col: 0
     },
     {
-      isMine: false,
+      isMine: isMineRandom(),
       hidden: true,
       row: 2,
       col: 1
     },
     {
-      isMine: false,
+      isMine: isMineRandom(),
       hidden: true,
       row: 2,
       col: 2
-  }
+  },
+  {
+    isMine: isMineRandom(),
+    hidden: true,
+    row: 2,
+    col: 3
+  },
+
+
+  {
+    isMine: isMineRandom(),
+    hidden: true,
+    row: 3,
+    col: 0
+  },
+  {
+    isMine: isMineRandom(),
+    hidden: true,
+    row: 3,
+    col: 1
+  },
+  {
+    isMine: isMineRandom(),
+    hidden: true,
+    row: 3,
+    col: 2
+},
+{
+  isMine: isMineRandom(),
+  hidden: true,
+  row: 3,
+  col: 3
+}
+
+
+
   ]
 }
 
